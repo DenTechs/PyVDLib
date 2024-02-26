@@ -73,7 +73,9 @@ def ReadVector3():
     return Vector3(x=ReadFloat(),y=ReadFloat(),z=ReadFloat())
 
 def ReadPose():
-    return Pose(Orientation=ReadQuaternion(), Position=ReadVector3())
+    #return Pose(Orientation=ReadQuaternion(), Position=ReadVector3())
+    #return Pose(Orientation=Quaternion(x=struct.unpack('f', mm.read(4))[0],y=struct.unpack('f', mm.read(4))[0],z=struct.unpack('f', mm.read(4))[0],w=struct.unpack('f', mm.read(4))[0]), Position=Vector3(x=struct.unpack('f', mm.read(4))[0],y=struct.unpack('f', mm.read(4))[0],z=struct.unpack('f', mm.read(4))[0]))
+    struct.unpack("fffffff", mm.read(28))[0]
 
 def ReadFingerJointState():
     return FingerJointState(Pose=ReadPose(), Radius=ReadFloat(), AngularVelocity=ReadVector3(), LinearVelocity=ReadVector3())
@@ -88,8 +90,20 @@ def ReadSkeletonJoints():
     return SkeletonJoint(Joint=ReadUint32(), ParentJoint=ReadUint32(), Pose=ReadPose())
 
 
+
+file = open("format_specifier.txt", "r")
+format = file.read()
+file.close()
+
+
 while True:
     mm = mmap.mmap(-1, 9432,"VirtualDesktop.BodyState")
+
+    unpacked = struct.unpack(format, mm.read)
+
+
+
+
 
     FaceIsValid = ReadBool()
 
