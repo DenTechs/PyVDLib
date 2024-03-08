@@ -89,7 +89,8 @@ def ReadSkeletonJoints():
 
 
 while True:
-    mm = mmap.mmap(-1, 9432,"VirtualDesktop.BodyState")
+    mm = mmap.mmap(-1, 9436,"VirtualDesktop.BodyState")
+    mm.seek(4)
 
     FaceIsValid = ReadBool()
 
@@ -101,7 +102,7 @@ while True:
         ExpressionWeights[i] = ReadFloat()
         i+=1
     
-    ExpressionConfidences = np.empty(2, dtype=float)
+    ExpressionConfidences = np.empty(ConfidenceCount, dtype=float)
     i = 0
     while i < ExpressionConfidences.size:
         ExpressionConfidences[i] = ReadFloat()
@@ -152,11 +153,9 @@ while True:
 
     SkeletonChangedCount = ReadUint32()
 
-    print(LeftHandActive)
-
     mm.close()
 
-    time.sleep(0.1)
+    time.sleep(0.25)
     #break
 
 
