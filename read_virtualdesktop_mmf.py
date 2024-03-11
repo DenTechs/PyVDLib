@@ -84,10 +84,14 @@ def ReadFingerJointState():
     return FingerJointState(Pose=ReadPose(), Radius=ReadFloat(), AngularVelocity=ReadVector3(), LinearVelocity=ReadVector3())
 
 def ReadHandTrackingAimState():
-    return HandTrackingAimState(AimStatus=ReadUint64(), AimPose=ReadPose(), PinchStrengthIndex=ReadFloat(), PinchStrengthMiddle=ReadFloat(), PinchStrengthRing=ReadFloat(), PinchStrengthLittle=ReadFloat())
+    handTrackingAimStateRead = HandTrackingAimState(AimStatus=ReadUint64(), AimPose=ReadPose(), PinchStrengthIndex=ReadFloat(), PinchStrengthMiddle=ReadFloat(), PinchStrengthRing=ReadFloat(), PinchStrengthLittle=ReadFloat())
+    Align(8)
+    return handTrackingAimStateRead
 
 def ReadBodyJointLocation():
-    return BodyJointLocation(LocationFlags=ReadUint64(), Pose=ReadPose())
+    bodyJointLocationRead = BodyJointLocation(LocationFlags=ReadUint64(), Pose=ReadPose())
+    Align(8)
+    return bodyJointLocationRead
 
 def ReadSkeletonJoints():
     return SkeletonJoint(Joint=ReadUint32(), ParentJoint=ReadUint32(), Pose=ReadPose())
@@ -184,8 +188,7 @@ while True:
         i+=1
 
     SkeletonChangedCount = ReadUint32()
-    print(SkeletonChangedCount)
-    
+
     mm.close()
 
     time.sleep(0.25)
