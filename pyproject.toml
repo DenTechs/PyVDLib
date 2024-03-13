@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "PyVDLib"
+version = "0.0.1"
+authors = [
+  { name="DenTechs", email="trdentechs+python@gmail.com" },
+]
+description = "A library to make it easy to use the body tracking information from Virtual Desktop in Python"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "pywin32",
+    "numpy",
+]
+
+[project.urls]
+Homepage = "https://www.vrdesktop.net/"
+Issues = "https://github.com/DenTechs/PyVDLib/issues"
+Discord = "https://discord.gg/7eDbfgdE"
