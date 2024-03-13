@@ -1,0 +1,1 @@
+from PyVDLib.PyVDLib import GetVirtualDesktopBodyDict, AwaitVirtualDesktopSyncEvent

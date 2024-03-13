@@ -4,7 +4,7 @@ A library to make it easy to use the body tracking information from Virtual Desk
 
 ## Installation
 
-PyVDLib can be installed with `pip install pyvdlib`
+PyVDLib can be installed with `pip install pyvdlib` and imported with `import PyVDLib`
 
 ## Usage
 
