@@ -2,6 +2,10 @@
 
 A library to make it easy to use the body tracking information from Virtual Desktop in Python
 
+## Installation
+
+PyVDLib can be installed with `pip install pyvdlib`
+
 ## Usage
 
 `AwaitVirtualDesktopSyncEvent(timeout)`
@@ -69,7 +73,11 @@ Returns a dict with the following keys:
 `LocationFlags: np.uint64`
 `Pose: Pose`
 
+Location flags function similarly to a boolean, but instead of being 0 or 1, they are either 0 or 15. These flags include bits for position and orientation, as well as a valid and tracked bit. As it currently stands, these are either all activated or all deactivated.
+
 ### SkeletonJoint
 `Joint: np.uint32`
 `ParentJoint: np.uint32`
 `Pose: Pose`
+
+List of joint mappings can be found here: [LINK](https://developer.oculus.com/documentation/unity/move-body-tracking/)

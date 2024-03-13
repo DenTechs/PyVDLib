@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "PyVDLib"
-version = "0.0.1"
+version = "1.0.0"
 authors = [
   { name="DenTechs", email="trdentechs+python@gmail.com" },
 ]
@@ -23,5 +23,6 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://www.vrdesktop.net/"
+Repo = "https://github.com/DenTechs/PyVDLib"
 Issues = "https://github.com/DenTechs/PyVDLib/issues"
 Discord = "https://discord.gg/7eDbfgdE"
