@@ -37,39 +37,39 @@ Returns a dict with the following keys:
 - SkeletonChangedCount (Uint32)
 
 ### Quaternion
-`x: float
-y: float
-z: float
-w: float`
+`x: float`
+`y: float`
+`z: float`
+`w: float`
 
 ### Vector3
-`x: float
-y: float
-z: float`
+`x: float`
+`y: float`
+`z: float`
 
 ### Pose
-`Orientation: Quaternion
-Position: Vector3`
+`Orientation: Quaternion`
+`Position: Vector3`
 
 ### FingerJointState
-`Pose: Pose
-Radius: float
-AngularVelocity: Vector3
-LinearVelocity: Vector3`
+`Pose: Pose`
+`Radius: float`
+`AngularVelocity: Vector3`
+`LinearVelocity: Vector3`
 
 ### HandTrackingAimState
-`AimStatus: np.uint64
-AimPose: Pose
-PinchStrengthIndex: float
-PinchStrengthMiddle: float
-PinchStrengthRing: float
-PinchStrengthLittle: float`
+`AimStatus: np.uint64`
+`AimPose: Pose`
+`PinchStrengthIndex: float`
+`PinchStrengthMiddle: float`
+`PinchStrengthRing: float`
+`PinchStrengthLittle: float`
 
 ### BodyJointLocation
-`LocationFlags: np.uint64
-Pose: Pose`
+`LocationFlags: np.uint64`
+`Pose: Pose`
 
 ### SkeletonJoint
-`Joint: np.uint32
-ParentJoint: np.uint32
-Pose: Pose`
+`Joint: np.uint32`
+`ParentJoint: np.uint32`
+`Pose: Pose`
