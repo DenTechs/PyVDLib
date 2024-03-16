@@ -73,11 +73,15 @@ Returns a dict with the following keys:
 `LocationFlags: np.uint64`
 `Pose: Pose`
 
+The active joint locations.
+
 Location flags function similarly to a boolean, but instead of being 0 or 1, they are either 0 or 15. These flags include bits for position and orientation, as well as a valid and tracked bit. As it currently stands, these are either all activated or all deactivated.
 
 ### SkeletonJoint
 `Joint: np.uint32`
 `ParentJoint: np.uint32`
 `Pose: Pose`
+
+A static T-Pose of the users proportions.
 
 List of joint mappings can be found here: [LINK](https://developer.oculus.com/documentation/unity/move-body-tracking/)
