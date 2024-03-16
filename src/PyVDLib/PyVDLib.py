@@ -16,6 +16,16 @@ class Vector3:
     x: float
     y: float
     z: float
+    def __add__(self,b):
+        return Vector3(x=self.x+b.x,y=self.y+b.y,z=self.z+b.z)
+    def __sub__(self,b):
+        return Vector3(x=self.x-b.x,y=self.y-b.y,z=self.z-b.z)
+    def __pos__(self):
+        return self
+    def __neg__(self):
+        return Vector3(x=-self.x,y=-self.y,z=-self.z)
+    def __abs__(self):
+        return np.sqrt(self.x**2+self.y**2+self.z**2)
 
 @dataclass
 class Pose:
